@@ -12,3 +12,4 @@ E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csproj.CoreCo
 E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csproj.CopyComplete
 E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.exe
 E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.pdb
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csprojAssemblyReference.cache

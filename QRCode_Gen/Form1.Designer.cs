@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picQRCodeLeft = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTexto = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.btnGerarQRCode = new System.Windows.Forms.Button();
             this.picQRCodeRight = new System.Windows.Forms.PictureBox();
             this.textInfo = new System.Windows.Forms.TextBox();
+            this.labelDeveloper = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeRight)).BeginInit();
             this.SuspendLayout();
@@ -56,15 +58,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.Size = new System.Drawing.Size(249, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Informe o produto e estação";
+            this.label1.Text = "Informe o produto e estação. Exemplo: FOGODV01";
             // 
             // txtTexto
             // 
             this.txtTexto.Location = new System.Drawing.Point(12, 251);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(210, 20);
+            this.txtTexto.Size = new System.Drawing.Size(200, 20);
             this.txtTexto.TabIndex = 2;
             // 
             // label2
@@ -128,11 +130,23 @@
             this.textInfo.Size = new System.Drawing.Size(428, 108);
             this.textInfo.TabIndex = 9;
             // 
+            // labelDeveloper
+            // 
+            this.labelDeveloper.AutoSize = true;
+            this.labelDeveloper.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeveloper.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelDeveloper.Location = new System.Drawing.Point(2, 499);
+            this.labelDeveloper.Name = "labelDeveloper";
+            this.labelDeveloper.Size = new System.Drawing.Size(117, 12);
+            this.labelDeveloper.TabIndex = 10;
+            this.labelDeveloper.Text = "Developed by R. Kelin";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 516);
+            this.Controls.Add(this.labelDeveloper);
             this.Controls.Add(this.textInfo);
             this.Controls.Add(this.picQRCodeRight);
             this.Controls.Add(this.btnGerarQRCode);
@@ -143,6 +157,7 @@
             this.Controls.Add(this.txtTexto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picQRCodeLeft);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "QRCode Gen";
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeLeft)).EndInit();
@@ -164,6 +179,7 @@
         private System.Windows.Forms.Button btnGerarQRCode;
         private System.Windows.Forms.PictureBox picQRCodeRight;
         private System.Windows.Forms.TextBox textInfo;
+        private System.Windows.Forms.Label labelDeveloper;
     }
 }
 
