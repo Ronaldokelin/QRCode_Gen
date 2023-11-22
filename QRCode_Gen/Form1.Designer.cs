@@ -40,6 +40,8 @@
             this.picQRCodeRight = new System.Windows.Forms.PictureBox();
             this.textInfo = new System.Windows.Forms.TextBox();
             this.labelDeveloper = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeRight)).BeginInit();
             this.SuspendLayout();
@@ -56,40 +58,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 233);
+            this.label1.Location = new System.Drawing.Point(9, 240);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 13);
+            this.label1.Size = new System.Drawing.Size(234, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Informe o produto e estação. Exemplo: FOGODV01";
+            this.label1.Text = "Enter the product, station and number of station.";
             // 
             // txtTexto
             // 
-            this.txtTexto.Location = new System.Drawing.Point(12, 251);
+            this.txtTexto.Location = new System.Drawing.Point(12, 260);
             this.txtTexto.Name = "txtTexto";
-            this.txtTexto.Size = new System.Drawing.Size(200, 20);
+            this.txtTexto.Size = new System.Drawing.Size(231, 20);
             this.txtTexto.TabIndex = 2;
+            this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 274);
+            this.label2.Location = new System.Drawing.Point(11, 312);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Altura";
+            this.label2.Text = "Height";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 274);
+            this.label3.Location = new System.Drawing.Point(93, 312);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Largura";
+            this.label3.Text = "Width";
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(13, 291);
+            this.txtAltura.Location = new System.Drawing.Point(13, 329);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(66, 20);
             this.txtAltura.TabIndex = 5;
@@ -97,7 +100,7 @@
             // 
             // txtLargura
             // 
-            this.txtLargura.Location = new System.Drawing.Point(95, 291);
+            this.txtLargura.Location = new System.Drawing.Point(95, 329);
             this.txtLargura.Name = "txtLargura";
             this.txtLargura.Size = new System.Drawing.Size(60, 20);
             this.txtLargura.TabIndex = 6;
@@ -105,9 +108,9 @@
             // 
             // btnGerarQRCode
             // 
-            this.btnGerarQRCode.Location = new System.Drawing.Point(351, 274);
+            this.btnGerarQRCode.Location = new System.Drawing.Point(305, 289);
             this.btnGerarQRCode.Name = "btnGerarQRCode";
-            this.btnGerarQRCode.Size = new System.Drawing.Size(95, 34);
+            this.btnGerarQRCode.Size = new System.Drawing.Size(119, 65);
             this.btnGerarQRCode.TabIndex = 7;
             this.btnGerarQRCode.Text = "QRCode Viwer";
             this.btnGerarQRCode.UseVisualStyleBackColor = true;
@@ -124,10 +127,10 @@
             // 
             // textInfo
             // 
-            this.textInfo.Location = new System.Drawing.Point(17, 330);
+            this.textInfo.Location = new System.Drawing.Point(12, 379);
             this.textInfo.Multiline = true;
             this.textInfo.Name = "textInfo";
-            this.textInfo.Size = new System.Drawing.Size(428, 108);
+            this.textInfo.Size = new System.Drawing.Size(434, 108);
             this.textInfo.TabIndex = 9;
             // 
             // labelDeveloper
@@ -141,11 +144,31 @@
             this.labelDeveloper.TabIndex = 10;
             this.labelDeveloper.Text = "Developed by R. Kelin";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 289);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(238, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Example: FOGO5G, DV and 01 \"FOGO5GDV01\"";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 360);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "information for configuring the router/modem";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 516);
+            this.ClientSize = new System.Drawing.Size(460, 516);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelDeveloper);
             this.Controls.Add(this.textInfo);
             this.Controls.Add(this.picQRCodeRight);
@@ -180,6 +203,8 @@
         private System.Windows.Forms.PictureBox picQRCodeRight;
         private System.Windows.Forms.TextBox textInfo;
         private System.Windows.Forms.Label labelDeveloper;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

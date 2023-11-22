@@ -31,7 +31,7 @@ namespace QRCode_Gen
         {
             if (txtTexto.Text == string.Empty || txtLargura.Text == string.Empty && txtLargura.Text == string.Empty)
             {
-                MessageBox.Show("Informações inválidas. Complete as informações para gerar o QRCode.");
+                MessageBox.Show("Invalid information. Complete the information to generate the QRCode.");
                 txtTexto.Focus();
                 return;
             }
@@ -41,18 +41,24 @@ namespace QRCode_Gen
                 int altura = Convert.ToInt32(txtAltura.Text);
                 string QRcode_left = "MOTO-WIFI:S:" + txtTexto.Text + ";T:WPA;P:12345678;H:false;IP:192.168.137.10;";
                 string QRcode_right = "MOTO-WIFI:S:" + txtTexto.Text + ";T:WPA;P:12345678;H:false;IP:192.168.137.20;";
+
                 picQRCodeLeft.Image = GerarQRCode(largura, altura, QRcode_left);
                 picQRCodeRight.Image = GerarQRCode(largura, altura, QRcode_right);
-                textInfo.Text = "SSID:" + txtTexto.Text + "\r\n" + "Senha:12345678";
-                picQRCodeLeft.Image.Save(@"C:\prod\config\QRcode_left.jpeg", ImageFormat.Jpeg);
-                picQRCodeRight.Image.Save(@"C:\prod\config\QRcode_right.jpeg", ImageFormat.Jpeg);
 
+                textInfo.Text = "Network name (SSID):" + txtTexto.Text + "\r\n" + "Password:12345678";
+
+                picQRCodeLeft.Image.Save(@"C:\prod\config\QRcode_left.jpg", ImageFormat.Jpeg);
+                picQRCodeRight.Image.Save(@"C:\prod\config\QRcode_right.jpg", ImageFormat.Jpeg);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+        }
+        private void txtTexto_TextChanged(object sender, EventArgs e)
+        {
+            txtTexto.SelectionStart = txtTexto.Text.Length;
+            txtTexto.Text = txtTexto.Text.ToUpper();
         }
     }
 }
