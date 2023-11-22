@@ -1,0 +1,14 @@
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\QRCode_Gen.exe.config
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\QRCode_Gen.exe
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\QRCode_Gen.pdb
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\zxing.dll
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\zxing.presentation.dll
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\zxing.xml
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\bin\Debug\zxing.presentation.xml
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.Form1.resources
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.Properties.Resources.resources
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csproj.GenerateResource.cache
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csproj.CoreCompileInputs.cache
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.csproj.CopyComplete
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.exe
+E:\DesvelopmentProjects\QRCode_Gen\QRCode_Gen\obj\Debug\QRCode_Gen.pdb
