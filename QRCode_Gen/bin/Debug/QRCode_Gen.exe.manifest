@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QRCode_Gen.exe" size="29088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QRCode_Gen.exe" size="34720">
       <assemblyIdentity name="QRCode_Gen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BmD+v/QJbQaZH+2CATjotmlP1J6o5FY6diUeMekqClA=</dsig:DigestValue>
+        <dsig:DigestValue>mnGvpWg2HgxtWxp05EJ/frU9rnv3AsFziVN/mTYL2zk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
