@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
+using System.Diagnostics;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Windows.Forms;
+using System.IO;
 
 namespace QRCode_Gen
 {
@@ -10,6 +14,8 @@ namespace QRCode_Gen
         public Form1()
         {
             InitializeComponent();
+            ListNetworkInterfaces();
+            Configinit();            
         }
 
         public Bitmap GerarQRCode(int width, int height, string text)
@@ -29,6 +35,20 @@ namespace QRCode_Gen
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+        // Depth Tab
+
+        //Depth qrcode generator tab
         private void btnGerarQRCode_Click(object sender, EventArgs e)
         {
             txtTexto.SelectionStart = txtTexto.Text.Length;
@@ -61,6 +81,41 @@ namespace QRCode_Gen
             }
         }
 
+        private void btnStationName_Click(object sender, EventArgs e)
+        {
+            string specificPath = @"C:\prod\config\";
+
+            // Check if path exists
+            if (Directory.Exists(specificPath))
+            {
+                // Filter only modelfile_world*.txt files
+                string[] files = Directory.GetFiles(specificPath, "modelfile_world*.txt");
+                if (files.Length > 0)
+                {
+                    string message = "";
+                    foreach (string file in files)
+                    {
+                        // Extracts the part of the file name that matches the pattern *
+                        string fileName = Path.GetFileName(file);
+                        int lastUnderscoreIndex = fileName.LastIndexOf('_');
+                        int extensionIndex = fileName.LastIndexOf(".txt");
+                        if (lastUnderscoreIndex != -1 && extensionIndex != -1)
+                        {
+                            string extractedPart = fileName.Substring(lastUnderscoreIndex + 1, extensionIndex - lastUnderscoreIndex - 1);
+                            message += extractedPart + Environment.NewLine;
+                        }
+                    }
+                    MessageBox.Show(message, "Station Name Options");
+                }
+            }
+            else
+                MessageBox.Show("Station Name not found");
+
+        }
+
+        // UCT tab
+
+        //UCT qrcode generator tab
         private void btnGerarQRCodeUCT_Click(object sender, EventArgs e)
         {
             txtTextoUCT.SelectionStart = txtTextoUCT.Text.Length;
@@ -88,7 +143,7 @@ namespace QRCode_Gen
                 picQRCode4.Image = GerarQRCode(largura, altura, QRcode_4);
                 picQRCode5.Image = GerarQRCode(largura, altura, QRcode_5);
 
-                textInfoUCT.Text = "Network name (SSID):" + txtTextoUCT.Text + "\r\n" + "Password:12345678"+"\r\n"+ "Images saved in the path C:>prod>config";
+                textInfoUCT.Text = "Network name (SSID):" + txtTextoUCT.Text + "\r\n" + "Password:12345678" + "\r\n" + "Images saved in the path C:>prod>config";
 
                 picQRCode1.Image.Save(@"C:\prod\config\QRcode_1.jpg", ImageFormat.Jpeg);
                 picQRCode2.Image.Save(@"C:\prod\config\QRcode_2.jpg", ImageFormat.Jpeg);
@@ -100,6 +155,156 @@ namespace QRCode_Gen
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }    
+        }
+
+        private void btnStationNameUCT_Click(object sender, EventArgs e)
+        {
+            string specificPath = @"C:\prod\config\";
+
+            // Check if path exists
+            if (Directory.Exists(specificPath))
+            {
+                // Filter only modelfile_world*.txt files
+                string[] files = Directory.GetFiles(specificPath, "modelfile_world*.txt");
+                if (files.Length > 0)
+                {
+                    string message = "";
+                    foreach (string file in files)
+                    {
+                        // Extracts the part of the file name that matches the pattern *
+                        string fileName = Path.GetFileName(file);
+                        int lastUnderscoreIndex = fileName.LastIndexOf('_');
+                        int extensionIndex = fileName.LastIndexOf(".txt");
+                        if (lastUnderscoreIndex != -1 && extensionIndex != -1)
+                        {
+                            string extractedPart = fileName.Substring(lastUnderscoreIndex + 1, extensionIndex - lastUnderscoreIndex - 1);
+                            message += extractedPart + Environment.NewLine;
+                        }
+                    }
+                    MessageBox.Show(message, "Station Name Options");
+                }
+            }
+            else
+                MessageBox.Show("Station Name not found");
+
+        }
+
+        // Config router TAB
+        private void Configinit()
+        {
+            // Setting the default value for wifi router tab
+            textBoxRenameInterface.Text = "Router";
+            textBoxIP.Text = "192.168.137.1";
+            textBoxMask.Text = "255.255.255.0";
+            textBoxGateway.Text = "";
+
+            textBoxNote.Text =
+                "Fixed Wireless Router IP Setting: 192.168.137.2 \r\n" +
+                "For Flex team use the link below for more information \r\n \r\n" +
+                @"\\jagnt092\testengineer\03-Benchs\02-BE\07-DEPTH\Docs";
+        }
+
+        private void ListNetworkInterfaces()
+        {
+            var interfaces = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (var ni in interfaces)
+            {
+                comboBoxInterfaces.Items.Add(ni.Name); // Adicionando o nome da interface
+            }
+            comboBoxInterfaces.SelectedIndexChanged += ComboBoxInterfaces_SelectedIndexChanged;
+        }
+
+        private void ComboBoxInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string interfaceName = comboBoxInterfaces.SelectedItem.ToString();
+                var ni = NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault(n => n.Name == interfaceName);
+                if (ni != null)
+                {
+                    var ipProps = ni.GetIPProperties();
+                    var ipv4Info = ipProps.UnicastAddresses.FirstOrDefault(a => a.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                    var ipv6Info = ipProps.UnicastAddresses.FirstOrDefault(a => a.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6);
+
+                    string ipv4Address = ipv4Info?.Address.ToString() ?? "N/A";
+                    string ipv4Mask = ipv4Info?.IPv4Mask.ToString() ?? "N/A";
+                    string ipv6Address = ipv6Info?.Address.ToString() ?? "N/A";
+
+                    textBoxStatus.Text =
+                    $"Interface: {ni.Name}\r\n" +
+                    $"Descrição: {ni.Description}\r\n" +
+                    $"Endereço IPv4: {ipv4Address}\r\n" +
+                    $"Máscara de Sub-rede IPv4: {ipv4Mask}\r\n" +
+                    $"Endereço IPv6: {ipv6Address}\r\n" +
+                    $"Gateway: {ipProps.GatewayAddresses.FirstOrDefault()?.Address}";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}");
+            }
+        }
+
+        private void buttonConfigure_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string interfaceName = comboBoxInterfaces.SelectedItem.ToString();
+                string ip = textBoxIP.Text;
+                string mask = textBoxMask.Text;
+                string gateway = textBoxGateway.Text;
+                string newName = textBoxRenameInterface.Text;
+
+                ConfigureIP(interfaceName, ip, mask, gateway);
+                RenameInterface(interfaceName, newName);
+                comboBoxInterfaces.Items.Clear();
+                ListNetworkInterfaces();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao configurar a interface: {ex.Message}");
+            }
+        }
+
+        private void ConfigureIP(string interfaceName, string ip, string mask, string gateway)
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo("netsh", $"interface ip set address name=\"{interfaceName}\" static {ip} {mask} {gateway}");
+                psi.RedirectStandardOutput = true;
+                psi.UseShellExecute = false;
+                psi.CreateNoWindow = true;
+
+                Process process = Process.Start(psi);
+                process.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao configurar o IP: {ex.Message}");
+            }
+        }
+
+        private void RenameInterface(string oldName, string newName)
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo("netsh", $"interface set interface name=\"{oldName}\" newname=\"{newName}\"");
+                psi.RedirectStandardOutput = true;
+                psi.UseShellExecute = false;
+                psi.CreateNoWindow = true;
+
+                Process process = Process.Start(psi);
+                process.WaitForExit();
+
+                MessageBox.Show($"Interface {oldName} renomeada para {newName}.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao renomear a interface: {ex.Message}");
+            }
+        }
+
+        
     }
 }

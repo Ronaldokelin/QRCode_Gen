@@ -60,6 +60,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.picQRCode1 = new System.Windows.Forms.PictureBox();
             this.picQRCode5 = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxNote = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.comboBoxInterfaces = new System.Windows.Forms.ComboBox();
+            this.textBoxRenameInterface = new System.Windows.Forms.TextBox();
+            this.textBoxMask = new System.Windows.Forms.TextBox();
+            this.buttonConfigure = new System.Windows.Forms.Button();
+            this.textBoxGateway = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxIP = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnStationName = new System.Windows.Forms.Button();
+            this.btnStationNameUCT = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDepth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCodeRight)).BeginInit();
@@ -70,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode5)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelDeveloper
@@ -87,6 +105,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPageDepth);
             this.tabControl.Controls.Add(this.tabPageUCT);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -96,6 +115,7 @@
             // tabPageDepth
             // 
             this.tabPageDepth.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPageDepth.Controls.Add(this.btnStationName);
             this.tabPageDepth.Controls.Add(this.label5);
             this.tabPageDepth.Controls.Add(this.label4);
             this.tabPageDepth.Controls.Add(this.textInfo);
@@ -130,9 +150,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 385);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(238, 13);
+            this.label4.Size = new System.Drawing.Size(296, 13);
             this.label4.TabIndex = 36;
-            this.label4.Text = "Example: FOGO5G, DV and 01 \"FOGO5GDV01\"";
+            this.label4.Text = "Example: FOGO5G, BE01, DV and 01 \"FOGO5GBE01DV01\"";
             // 
             // textInfo
             // 
@@ -208,9 +228,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 330);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 13);
+            this.label1.Size = new System.Drawing.Size(256, 13);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Enter the product, station and number of station.";
+            this.label1.Text = "Enter the product, line, station and number of station.";
             // 
             // picQRCodeLeft
             // 
@@ -225,6 +245,7 @@
             // tabPageUCT
             // 
             this.tabPageUCT.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPageUCT.Controls.Add(this.btnStationNameUCT);
             this.tabPageUCT.Controls.Add(this.picQRCode3);
             this.tabPageUCT.Controls.Add(this.picQRCode4);
             this.tabPageUCT.Controls.Add(this.picQRCode2);
@@ -382,16 +403,176 @@
             this.picQRCode5.TabIndex = 53;
             this.picQRCode5.TabStop = false;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.textBoxNote);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.textBoxStatus);
+            this.tabPage1.Controls.Add(this.comboBoxInterfaces);
+            this.tabPage1.Controls.Add(this.textBoxRenameInterface);
+            this.tabPage1.Controls.Add(this.textBoxMask);
+            this.tabPage1.Controls.Add(this.buttonConfigure);
+            this.tabPage1.Controls.Add(this.textBoxGateway);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.textBoxIP);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(453, 528);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Configure wifi router network";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(63, 64);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 13);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Network information";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(61, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(177, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Select the network for the wifi router";
+            // 
+            // textBoxNote
+            // 
+            this.textBoxNote.Location = new System.Drawing.Point(59, 378);
+            this.textBoxNote.Multiline = true;
+            this.textBoxNote.Name = "textBoxNote";
+            this.textBoxNote.Size = new System.Drawing.Size(321, 124);
+            this.textBoxNote.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(64, 231);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "New Name:";
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Location = new System.Drawing.Point(59, 82);
+            this.textBoxStatus.Multiline = true;
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.Size = new System.Drawing.Size(321, 131);
+            this.textBoxStatus.TabIndex = 17;
+            // 
+            // comboBoxInterfaces
+            // 
+            this.comboBoxInterfaces.FormattingEnabled = true;
+            this.comboBoxInterfaces.Location = new System.Drawing.Point(59, 33);
+            this.comboBoxInterfaces.Name = "comboBoxInterfaces";
+            this.comboBoxInterfaces.Size = new System.Drawing.Size(321, 21);
+            this.comboBoxInterfaces.TabIndex = 12;
+            // 
+            // textBoxRenameInterface
+            // 
+            this.textBoxRenameInterface.Location = new System.Drawing.Point(204, 224);
+            this.textBoxRenameInterface.Name = "textBoxRenameInterface";
+            this.textBoxRenameInterface.Size = new System.Drawing.Size(176, 20);
+            this.textBoxRenameInterface.TabIndex = 21;
+            // 
+            // textBoxMask
+            // 
+            this.textBoxMask.Location = new System.Drawing.Point(204, 276);
+            this.textBoxMask.Name = "textBoxMask";
+            this.textBoxMask.Size = new System.Drawing.Size(176, 20);
+            this.textBoxMask.TabIndex = 15;
+            // 
+            // buttonConfigure
+            // 
+            this.buttonConfigure.Location = new System.Drawing.Point(270, 328);
+            this.buttonConfigure.Name = "buttonConfigure";
+            this.buttonConfigure.Size = new System.Drawing.Size(110, 37);
+            this.buttonConfigure.TabIndex = 13;
+            this.buttonConfigure.Text = "Configure";
+            this.buttonConfigure.UseVisualStyleBackColor = true;
+            this.buttonConfigure.Click += new System.EventHandler(this.buttonConfigure_Click);
+            // 
+            // textBoxGateway
+            // 
+            this.textBoxGateway.Location = new System.Drawing.Point(204, 302);
+            this.textBoxGateway.Name = "textBoxGateway";
+            this.textBoxGateway.Size = new System.Drawing.Size(176, 20);
+            this.textBoxGateway.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(64, 309);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Gateway:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(64, 257);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "IP address:";
+            // 
+            // textBoxIP
+            // 
+            this.textBoxIP.Location = new System.Drawing.Point(204, 250);
+            this.textBoxIP.Name = "textBoxIP";
+            this.textBoxIP.Size = new System.Drawing.Size(176, 20);
+            this.textBoxIP.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(64, 283);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Subnet Mask:";
+            // 
+            // btnStationName
+            // 
+            this.btnStationName.Location = new System.Drawing.Point(311, 344);
+            this.btnStationName.Name = "btnStationName";
+            this.btnStationName.Size = new System.Drawing.Size(118, 30);
+            this.btnStationName.TabIndex = 38;
+            this.btnStationName.Text = "Station Name";
+            this.btnStationName.UseVisualStyleBackColor = true;
+            this.btnStationName.Click += new System.EventHandler(this.btnStationName_Click);
+            // 
+            // btnStationNameUCT
+            // 
+            this.btnStationNameUCT.Location = new System.Drawing.Point(312, 345);
+            this.btnStationNameUCT.Name = "btnStationNameUCT";
+            this.btnStationNameUCT.Size = new System.Drawing.Size(118, 30);
+            this.btnStationNameUCT.TabIndex = 54;
+            this.btnStationNameUCT.Text = "Station Name";
+            this.btnStationNameUCT.UseVisualStyleBackColor = true;
+            this.btnStationNameUCT.Click += new System.EventHandler(this.btnStationNameUCT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 594);
+            this.ClientSize = new System.Drawing.Size(484, 589);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.labelDeveloper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "QRCode Gen v1.1";
+            this.Text = "QRCode Gen v2.0";
             this.tabControl.ResumeLayout(false);
             this.tabPageDepth.ResumeLayout(false);
             this.tabPageDepth.PerformLayout();
@@ -404,6 +585,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQRCode5)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,6 +624,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox picQRCode1;
         private System.Windows.Forms.PictureBox picQRCode5;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxRenameInterface;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxStatus;
+        private System.Windows.Forms.TextBox textBoxGateway;
+        private System.Windows.Forms.TextBox textBoxMask;
+        private System.Windows.Forms.TextBox textBoxIP;
+        private System.Windows.Forms.Button buttonConfigure;
+        private System.Windows.Forms.ComboBox comboBoxInterfaces;
+        private System.Windows.Forms.TextBox textBoxNote;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnStationName;
+        private System.Windows.Forms.Button btnStationNameUCT;
     }
 }
 

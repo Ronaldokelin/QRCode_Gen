@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="QRCode_Gen.exe.manifest" size="5301">
+    <dependentAssembly dependencyType="install" codebase="QRCode_Gen.exe.manifest" size="5299">
       <assemblyIdentity name="QRCode_Gen.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Iaum7LwIxFTmHUdkR1jPvb03bNYhO8aMH03efo87jkI=</dsig:DigestValue>
+        <dsig:DigestValue>3GTwvxqXhZpzbjvjCAiz/XCTDwk6tArIoiippFJ9epQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
